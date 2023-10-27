@@ -18,9 +18,9 @@ public class EmployeeService {
 		return employeeRepository.findAll();
 	}
 
-	public void createEmployee(Employee employee) {
+	public Employee createEmployee(Employee employee) {
 
-		employeeRepository.save(employee);
+		return employeeRepository.save(employee);
 
 	}
 

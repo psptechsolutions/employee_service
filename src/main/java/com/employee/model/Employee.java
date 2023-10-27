@@ -1,56 +1,54 @@
 package com.employee.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name="EMPLOYEE")
+@Table(name="Employee")
 public class Employee {
 
 	@Id
-	private Integer employeeId;
-	private String employeeNm;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	private String firstNm;
+	private String lastNm;
 	private int age;
 	private String country;
-
-	public Integer getEmployeeId() {
-		return employeeId;
+	public long getId() {
+		return id;
 	}
-
-	public void setEmployeeId(Integer employeeId) {
-		this.employeeId = employeeId;
+	public void setId(long id) {
+		this.id = id;
 	}
-
-	public String getEmployeeNm() {
-		return employeeNm;
+	public String getFirstNm() {
+		return firstNm;
 	}
-
-	public void setEmployeeNm(String employeeNm) {
-		this.employeeNm = employeeNm;
+	public void setFirstNm(String firstNm) {
+		this.firstNm = firstNm;
 	}
-
+	public String getLastNm() {
+		return lastNm;
+	}
+	public void setLastNm(String lastNm) {
+		this.lastNm = lastNm;
+	}
 	public int getAge() {
 		return age;
 	}
-
 	public void setAge(int age) {
 		this.age = age;
 	}
-
 	public String getCountry() {
 		return country;
 	}
-
 	public void setCountry(String country) {
 		this.country = country;
 	}
 
-	@Override
-	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", employeeNm=" + employeeNm + ", age=" + age + ", country="
-				+ country + "]";
-	}
+
 
 }

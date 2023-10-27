@@ -3,6 +3,7 @@ package com.employee.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,9 +34,9 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/create")
-	public void createEmployee(@RequestBody Employee employee) {
+	public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
 
-		employeeService.createEmployee(employee);
+		return ResponseEntity.ok().body(this.employeeService.createEmployee(employee));
 
 	}
 //
