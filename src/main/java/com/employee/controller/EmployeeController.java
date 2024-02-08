@@ -50,7 +50,7 @@ public class EmployeeController {
 
 	public ResponseEntity<Employee>  updateEmployee(@PathVariable long employeeId,  @RequestBody Employee employee) {
 		
-		employee.setEmployeeId(employeeId);
+		employee.setId(employeeId);
 		return ResponseEntity.ok().body(employeeService.updateEmployee(employee));
 
 	}
