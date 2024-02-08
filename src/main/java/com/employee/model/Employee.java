@@ -1,30 +1,26 @@
 package com.employee.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Entity
-@Table(name="Employee")
+
+@Document(collection = "employee")
 public class Employee {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long employeeId;
+	private long id;
 	private String firstNm;
 	private String lastNm;
 	private int age;
 	private String country;
 
-	public long getEmployeeId() {
-		return employeeId;
+	public long getId() {
+		return id;
 	}
 
-	public void setEmployeeId(long employeeId) {
-		this.employeeId = employeeId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getFirstNm() {
@@ -61,8 +57,8 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", firstNm=" + firstNm + ", lastNm=" + lastNm + ", age=" + age
-				+ ", country=" + country + "]";
+		return "Employee [id=" + id + ", firstNm=" + firstNm + ", lastNm=" + lastNm + ", age=" + age + ", country="
+				+ country + "]";
 	}
 
 }
